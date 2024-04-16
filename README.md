@@ -15,6 +15,11 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app 
 any of the source files.
 You should not use `ng serve` directly, as it does not use the backend proxy configuration by default.
 
+## Task List Page
+There are two ways to access the Task List webpage:
+1. Navigate to http://localhost:4200/tasks
+2. Click on "Tasks" option in the homepage. It will redirect to the Task List view.
+
 # What's in the box
 
 The app template is based on [HTML5](http://whatwg.org/html), [TypeScript](http://www.typescriptlang.org) and

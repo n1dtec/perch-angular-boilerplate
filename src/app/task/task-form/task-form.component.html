@@ -1,0 +1,21 @@
+<div class="task-form-container">
+  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" id="description" name="description" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" name="status" ngModel required>
+        <option value="INCOMPLETE">Incomplete</option>
+        <option value="COMPLETE">Complete</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="!taskForm.valid">Add Task</button>
+  </form>
+
+</div>

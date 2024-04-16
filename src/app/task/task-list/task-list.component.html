@@ -1,0 +1,23 @@
+<div class="task-list-container">
+  <div *ngIf="isEmpty; else taskList" class="alert alert-info">
+    No tasks available. Please add some tasks.
+  </div>
+  <ng-template #taskList>
+    <div class="list-heading">Task List</div>
+    <ul class="list-group">
+      <li *ngFor="let task of tasks" class="list-group-item">
+        <div class="task-title">{{ task.title }}</div>
+        <div class="task-description">{{ task.description }}</div>
+        <button (click)="onStatusChange(task, task.status === 'COMPLETE' ? 'INCOMPLETE' : 'COMPLETE')"
+                class="btn btn-success">
+          {{ task.status === 'COMPLETE' ? 'Mark Incomplete' : 'Mark Complete' }}
+        </button>
+        <button (click)="onDelete(task)" class="btn btn-danger">Delete</button>
+      </li>
+    </ul>
+  </ng-template>
+  <button (click)="toggleTaskForm()" class="btn btn-primary mb-3">Add Task</button>
+  <div *ngIf="showTaskForm">
+    <app-task-form (taskAdded)="refreshTasks()"></app-task-form>
+  </div>
+</div>

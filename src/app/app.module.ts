@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
+import {TaskService} from "@app/task/task.service";
+import {CommonModule} from "@angular/common";
+import {TaskListComponent} from "@app/task/task-list/task-list.component";
 
 
 @NgModule({
@@ -16,15 +19,17 @@ import { ShellModule } from './shell/shell.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    CommonModule,
     RouterModule,
     TranslateModule.forRoot(),
     NgbModule,
     ShellModule,
     HomeModule,
+    TaskListComponent,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

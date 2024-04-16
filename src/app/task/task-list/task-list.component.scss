@@ -1,0 +1,77 @@
+$primary-color: #0f4671;
+$danger-color: #dc3545;
+$light-gray: #f8f9fa;
+$text-color: #343a40;
+$heading-color: #0d4e32;
+
+.task-list-container {
+  padding: 20px;
+  background-color: $light-gray;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .list-heading {
+    font-weight: bold;
+    font-size: larger;
+    color: $heading-color;
+  }
+
+  .list-group {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .list-group-item {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px 15px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .task-title {
+        font-weight: bold;
+        color: $text-color;
+      }
+
+      .task-description {
+        color: darken($text-color, 10%);
+      }
+
+      button {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+
+        &.btn-success {
+          background-color: $primary-color;
+
+          &:hover {
+            background-color: darken($primary-color, 10%);
+          }
+        }
+
+        &.btn-danger {
+          background-color: $danger-color;
+
+          &:hover {
+            background-color: darken($danger-color, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  .alert {
+    padding: 10px;
+    background-color: #ffc107;
+    color: #212529;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
